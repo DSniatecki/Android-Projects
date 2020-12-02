@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Super Movies</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_switch_text">Favourite</string>
+    <string name="spinner_prompt">categories</string>
+    <string name="system_spinner">categories</string>
+    <string name="category_selector_text">Selected Category</string>
+    <string name="return_from_selected_movie_text">Return</string>
+    <string name="movie_actors_text">Actors:</string>
+    <string name="movie_scenes_text">Scenes:</string>
+    <string name="movie_category">Movie category</string>
+    <string-array name="movie_category_array">
+        <item>All</item>
+        <item>Action</item>
+        <item>Comedy</item>
+        <item>Horror</item>
+        <item>Thriller</item>
+    </string-array>
+</resources>
