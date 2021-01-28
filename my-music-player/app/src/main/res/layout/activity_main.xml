@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#737373">
+
+
+        <ImageView
+            android:id="@+id/songCover"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="72dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/songName"
+            android:layout_width="299dp"
+            android:layout_height="23dp"
+            android:textAlignment="center"
+            android:textColor="#FB3F03"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/authorName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/songCover" />
+
+        <TextView
+            android:id="@+id/authorName"
+            android:layout_width="299dp"
+            android:layout_height="23dp"
+            android:layout_marginBottom="16dp"
+            android:textAlignment="center"
+            android:textColor="#FB3F03"
+            app:layout_constraintBottom_toTopOf="@+id/songTimeBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/remainingTime"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:text="@string/defaultRemainingTime"
+            android:textColor="#FB3F03"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/songTimeBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.552"
+            app:layout_constraintStart_toEndOf="@+id/songTimeBar"
+            app:layout_constraintTop_toTopOf="@+id/songTimeBar" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="56dp"
+            android:background="@drawable/start"
+            android:backgroundTint="#FB3F03"
+            android:onClick="controlMusic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/songTimeBar" />
+
+        <TextView
+            android:id="@+id/elapsedTime"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:text="@string/defaultElapsedTime"
+            android:textColor="#FB3F03"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/songTimeBar"
+            app:layout_constraintEnd_toStartOf="@+id/songTimeBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/songTimeBar" />
+
+        <SeekBar
+            android:id="@+id/songTimeBar"
+            android:layout_width="246dp"
+            android:layout_height="17dp"
+            android:layout_marginTop="108dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/songCover" />
+
+        <Button
+            android:id="@+id/previousSong"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:background="#FB3F03"
+            android:onClick="changeSongToPrevious"
+            android:text="@string/previousSong"
+            app:layout_constraintBottom_toBottomOf="@+id/startButton"
+            app:layout_constraintEnd_toStartOf="@+id/startButton"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/startButton"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <Button
+            android:id="@+id/forwardButton"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:background="#4A4A4A"
+            android:onClick="moveForward"
+            android:text="@string/moveForward"
+            android:textColor="#FB3F03"
+            app:layout_constraintBottom_toBottomOf="@+id/startButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.158"
+            app:layout_constraintStart_toEndOf="@+id/startButton"
+            app:layout_constraintTop_toTopOf="@+id/startButton"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:background="#4A4A4A"
+            android:onClick="moveBack"
+            android:text="@string/moveBack"
+            android:textColor="#FB3F03"
+            app:layout_constraintBottom_toBottomOf="@+id/startButton"
+            app:layout_constraintEnd_toStartOf="@+id/startButton"
+            app:layout_constraintHorizontal_bias="0.84"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/startButton"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/nextSong"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:background="#FB3F03"
+            android:onClick="changeSongToNext"
+            android:text="@string/nextSong"
+            app:layout_constraintBottom_toBottomOf="@+id/startButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.761"
+            app:layout_constraintStart_toEndOf="@+id/startButton"
+            app:layout_constraintTop_toTopOf="@+id/startButton"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
